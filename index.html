@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mossoria Ivy Sanctum · Garden Authority</title>
+  <!-- unique typography & base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- reset & variables (unique palette) ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f6ef;
+      color: #1e2b2c;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- typography & spacing ---------- */
+    h1, h2, h3, h4 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #1d3a3a;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.8rem 0 1rem;
+      border-left: 6px solid #7b9e7e;
+      padding-left: 1.2rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      color: #2f544b;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #3c6e5a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1d3a2e;
+    }
+
+    /* ---------- header / nav ---------- */
+    .site-header {
+      padding: 2rem 0 0.8rem;
+      border-bottom: 2px solid #d6dac8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1d3a3a;
+      letter-spacing: -0.03em;
+    }
+    .logo span {
+      color: #6b8f6e;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .nav-links a {
+      color: #1e2b2c;
+    }
+    .nav-links a:hover {
+      color: #4f7a5a;
+    }
+
+    /* ---------- cards & sections ---------- */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+      margin: 2.5rem 0;
+    }
+
+    .card {
+      background: #ffffffde;
+      backdrop-filter: blur(2px);
+      padding: 1.8rem 1.8rem 2rem;
+      border-radius: 32px 12px 32px 12px;
+      box-shadow: 0 12px 28px -12px rgba(30, 43, 44, 0.08);
+      transition: 0.25s ease;
+      border: 1px solid #e8ede0;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 36px -18px #2b4d3e30;
+      border-color: #b9cfb0;
+    }
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+    .card .meta {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #5f7a64;
+      margin-bottom: 0.5rem;
+    }
+
+    /* hero */
+    .hero {
+      padding: 3.2rem 0 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .hero-content {
+      flex: 2 1 400px;
+    }
+    .hero-content h1 {
+      font-size: 3.6rem;
+      line-height: 1.1;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      color: #2e4b41;
+      max-width: 700px;
+    }
+    .hero-image {
+      flex: 1 1 240px;
+      border-radius: 60px 20px 60px 20px;
+      overflow: hidden;
+      box-shadow: 0 16px 32px -16px #1e2b2c30;
+      background: #dce3d2;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* featured article image */
+    .featured-img {
+      border-radius: 40px 12px 40px 12px;
+      overflow: hidden;
+      margin: 2rem 0 1rem;
+      background: #d4decb;
+    }
+    .featured-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* category image (inline) */
+    .category-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 28px 8px 28px 8px;
+      background: #d0dcc4;
+      margin-bottom: 1rem;
+    }
+
+    /* infographic (optional) */
+    .infographic-box {
+      background: #e5eee0;
+      padding: 2rem 2rem 1.8rem;
+      border-radius: 60px 16px 60px 16px;
+      margin: 2.5rem 0;
+      border-left: 8px solid #5b8262;
+    }
+    .infographic-box img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+    }
+
+    /* tables & checklists */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 2rem 0;
+      background: #f5f8f0;
+      border-radius: 28px 8px 28px 8px;
+      padding: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.98rem;
+    }
+    th {
+      background: #34594b;
+      color: #f2f7eb;
+      padding: 14px 12px;
+      text-align: left;
+    }
+    td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #d2dec6;
+    }
+    .checklist {
+      background: #f1f6eb;
+      padding: 1.8rem 2rem;
+      border-radius: 30px 6px 30px 6px;
+      list-style: none;
+    }
+    .checklist li {
+      padding: 0.5rem 0 0.5rem 2.2rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23345e4b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>') left center no-repeat;
+      background-size: 1.4rem;
+    }
+
+    /* faq */
+    .faq-item {
+      border-bottom: 1px solid #d8e0ce;
+      padding: 1.6rem 0;
+    }
+    .faq-item h3 {
+      font-size: 1.4rem;
+      margin: 0 0 0.3rem;
+      color: #1d3a3a;
+    }
+    .faq-item p {
+      margin: 0.3rem 0 0;
+      color: #2b4a3f;
+    }
+
+    /* newsletter */
+    .newsletter {
+      background: #e9f0e2;
+      padding: 3rem 2.5rem;
+      border-radius: 80px 16px 80px 16px;
+      margin: 3.5rem 0;
+      text-align: center;
+    }
+    .newsletter input {
+      padding: 14px 22px;
+      border: 2px solid #b5cbb0;
+      border-radius: 60px;
+      width: 280px;
+      max-width: 100%;
+      background: white;
+      font-size: 1rem;
+    }
+    .newsletter button {
+      padding: 14px 34px;
+      border: none;
+      background: #1d3a3a;
+      color: white;
+      font-weight: 700;
+      border-radius: 60px;
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 2px solid #d2dcc6;
+      padding: 2.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* misc */
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #3b6b52;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1d3a3a;
+    }
+    .btn-outline:hover {
+      background: #1d3a3a;
+      color: #f4f9ed;
+      border-color: #1d3a3a;
+    }
+    .section-tag {
+      display: inline-block;
+      background: #dce8d2;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #1d3a2e;
+      font-weight: 600;
+    }
+    hr {
+      border: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #bccdb2, #e2ecda, #bccdb2);
+      margin: 2rem 0;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      h1 { font-size: 2.4rem; }
+      .hero-content h1 { font-size: 2.6rem; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+      .newsletter input { width: 100%; margin-bottom: 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="logo">Mossoria <span>Ivy Sanctum</span></div>
+    <div class="nav-links">
+      <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+    </div>
+  </header>
+
+  <!-- hero section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="section-tag">est. 2026 · botanical wisdom</span>
+      <h1>Where soil & spirit meet</h1>
+      <p>Mossoria Ivy Sanctum is a deep-rooted gardening journal for the modern cultivator. From heirloom seeds to mycelial networks, we grow knowledge that outlasts seasons.</p>
+      <a href="#" class="btn-outline" style="margin-top: 0.8rem;">Explore the sanctum →</a>
+    </div>
+    <div class="hero-image">
+      <!-- hero image (1) -->
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23a4b99a'/%3E%3Ccircle cx='120' cy='120' r='45' fill='%234e6d52'/%3E%3Ccircle cx='280' cy='180' r='60' fill='%233d5a40'/%3E%3Cpath d='M50 220 L350 220 L320 270 L80 270 L50 220' fill='%2363854f'/%3E%3C/svg%3E"
+           alt="Mossoria garden sanctuary" />
+    </div>
+  </section>
+
+  <!-- featured articles (2 cards) -->
+  <section>
+    <h2>Featured articles</h2>
+    <div class="card-grid">
+      <div class="card">
+        <span class="meta">🌱 deep dive</span>
+        <h3>The mycelial bridge: soil web</h3>
+        <p>How fungal networks exchange nutrients and warnings between plants — a 2000+ word visual guide.</p>
+        <a href="#">Read more →</a>
+      </div>
+      <div class="card">
+        <span class="meta">📖 heritage</span>
+        <h3>Seed saving in the Anthropocene</h3>
+        <p>Heirloom varieties, climate adaptation, and the art of storing genetic memory for future gardens.</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+    <!-- featured article image (2) -->
+    <div class="featured-img">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='220' viewBox='0 0 800 220'%3E%3Crect width='800' height='220' fill='%23b7c9ab'/%3E%3Ccircle cx='160' cy='100' r='50' fill='%2356774a'/%3E%3Ccircle cx='360' cy='130' r='40' fill='%233f6240'/%3E%3Crect x='480' y='60' width='200' height='80' fill='%23486b41'/%3E%3C/svg%3E"
+           alt="featured article visual — soil layers" />
+    </div>
+  </section>
+
+  <!-- beginner guides + expert resources (2 col) -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 3rem 0;">
+    <div>
+      <h2>Beginner guides</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 0.8rem 0; border-bottom: 1px solid #d7e0cb;"><a href="#">▶  Starting a no-dig bed</a></li>
+        <li style="padding: 0.8rem 0; border-bottom: 1px solid #d7e0cb;"><a href="#">▶  Compost for apartment dwellers</a></li>
+        <li style="padding: 0.8rem 0;"><a href="#">▶  ​​Understanding chill hours & hardiness</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Expert resources</h2>
+      <ul style="list-style: none; padding: 0;">
+        <li style="padding: 0.8rem 0; border-bottom: 1px solid #d7e0cb;"><a href="#">▶  Grafting heirloom fruit trees</a></li>
+        <li style="padding: 0.8rem 0; border-bottom: 1px solid #d7e0cb;"><a href="#">▶  Soil food web lab analysis</a></li>
+        <li style="padding: 0.8rem 0;"><a href="#">▶  Permaculture guild design</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- category image (3) + popular categories -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; margin: 2rem 0;">
+    <div style="flex: 1 1 200px;">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='180' viewBox='0 0 300 180'%3E%3Crect width='300' height='180' fill='%239fb393'/%3E%3Cpath d='M40 130 L100 70 L160 110 L220 60 L270 120 L260 150 L40 150 L40 130' fill='%234c6e47'/%3E%3C/svg%3E"
+           alt="category image" class="category-img" style="height: 180px;" />
+    </div>
+    <div style="flex: 2 1 300px;">
+      <h2>Popular categories</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1rem;">
+        <span style="background: #dce8d2; padding: 0.3rem 1.4rem; border-radius: 40px;">Edible perennials</span>
+        <span style="background: #dce8d2; padding: 0.3rem 1.4rem; border-radius: 40px;">Pollinator habitats</span>
+        <span style="background: #dce8d2; padding: 0.3rem 1.4rem; border-radius: 40px;">Soil ecology</span>
+        <span style="background: #dce8d2; padding: 0.3rem 1.4rem; border-radius: 40px;">Dry gardening</span>
+        <span style="background: #dce8d2; padding: 0.3rem 1.4rem; border-radius: 40px;">Herbalism</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- trending topics & latest articles -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 2rem 0;">
+    <div>
+      <h2>Trending topics</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="padding: 0.5rem 0;"><span style="background: #c7d6bb; padding: 0.1rem 0.8rem; border-radius: 40px;">🔥</span> <a href="#">Biochar trials in temperate zones</a></li>
+        <li style="padding: 0.5rem 0;"><span style="background: #c7d6bb; padding: 0.1rem 0.8rem; border-radius: 40px;">🔥</span> <a href="#">No-till market gardening</a></li>
+        <li style="padding: 0.5rem 0;"><span style="background: #c7d6bb; padding: 0.1rem 0.8rem; border-radius: 40px;">🔥</span> <a href="#">Perennial grain research</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Latest articles</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="padding: 0.5rem 0; border-bottom: 1px dashed #d2dcc6;"><a href="#">Mycorrhizae: hidden helper</a> <span style="font-size: 0.8rem; color: #3d634a;">· 3d ago</span></li>
+        <li style="padding: 0.5rem 0; border-bottom: 1px dashed #d2dcc6;"><a href="#">Winter sowing in milk jugs</a> <span style="font-size: 0.8rem; color: #3d634a;">· 1w ago</span></li>
+        <li style="padding: 0.5rem 0;"><a href="#">Rooftop rainwater harvesting</a> <span style="font-size: 0.8rem; color: #3d634a;">· 2w ago</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- in-depth tutorials + resource hub -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2.5rem; margin: 2rem 0;">
+    <div style="flex: 1 1 280px;">
+      <h2>In-depth tutorials</h2>
+      <div class="card" style="border-radius: 30px 8px 30px 8px;">
+        <h3 style="font-size: 1.5rem;">Crop rotation for small farms</h3>
+        <p>4-year cycle, companion planting, and disease suppression. With printable chart.</p>
+        <a href="#">Start tutorial →</a>
+      </div>
+    </div>
+    <div style="flex: 1 1 280px;">
+      <h2>Resource hub</h2>
+      <ul style="list-style: none; padding-left: 0;">
+        <li><a href="#">📘  Garden journal templates</a></li>
+        <li><a href="#">📗  Seed viability calculator</a></li>
+        <li><a href="#">📕  Frost date lookup</a></li>
+        <li><a href="#">📙  Compost carbon/nitrogen guide</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- optional infographic (4) -->
+  <div class="infographic-box">
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='140' viewBox='0 0 600 140'%3E%3Crect width='600' height='140' fill='%23d3dfc7'/%3E%3Crect x='40' y='30' width='120' height='80' fill='%234a6d47'/%3E%3Crect x='200' y='30' width='120' height='80' fill='%233f6042'/%3E%3Crect x='360' y='30' width='120' height='80' fill='%232d4d30'/%3E%3Ccircle cx='530' cy='70' r='25' fill='%23678f5c'/%3E%3C/svg%3E"
+         alt="infographic — soil health pillars" />
+    <p style="margin-top: 0.5rem; font-weight: 500;">Infographic: Four pillars of regenerative soil health</p>
+  </div>
+
+  <!-- table / comparison (example) -->
+  <div class="table-wrap">
+    <table>
+      <tr><th>Method</th><th>Water use</th><th>Weed pressure</th><th>Yield</th></tr>
+      <tr><td>No-dig</td><td>⬇️ 35%</td><td>Low</td><td>High</td></tr>
+      <tr><td>Conventional till</td><td>⬆️ 60%</td><td>High</td><td>Medium</td></tr>
+      <tr><td>Ridge planting</td><td>⬇️ 20%</td><td>Medium</td><td>Very high</td></tr>
+    </table>
+  </div>
+
+  <!-- checklist / common mistakes -->
+  <div class="checklist">
+    <h3 style="margin: 0 0 0.8rem;">🌿 5 common mistakes in raised beds</h3>
+    <li>Overwatering in the first month</li>
+    <li>Using fresh manure (burn roots)</li>
+    <li>Ignoring companion plant dynamics</li>
+    <li>Planting too deep for small seeds</li>
+    <li>Forgetting to mulch after planting</li>
+  </div>
+
+  <!-- FAQ section (schema-ready) -->
+  <section style="margin: 3.5rem 0;">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-item"><h3>What is the best soil pH for vegetables?</h3><p>Most vegetables thrive in 6.0–7.0. Acid lovers like blueberries prefer 4.5–5.5.</p></div>
+    <div class="faq-item"><h3>How often should I water raised beds?</h3><p>Deep watering 2–3 times per week in summer, depending on rainfall. Check 2 inches down.</p></div>
+    <div class="faq-item"><h3>Can I compost citrus peels?</h3><p>Yes — but balance with carbon-rich materials and turn the pile regularly.</p></div>
+  </section>
+
+  <!-- newsletter -->
+  <div class="newsletter">
+    <h2 style="margin: 0 0 0.5rem;">The Mossoria Dispatch</h2>
+    <p style="max-width: 500px; margin: 0 auto 1.5rem;">Weekly insights, forgotten techniques, and botanical curiosities. No spam, only soil.</p>
+    <input type="email" placeholder="your@email.com" />
+    <button>Subscribe</button>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Mossoria Ivy Sanctum · rooted in knowledge</div>
+    <div>
+      <a href="#">Privacy</a> · <a href="#">Contact</a> · <a href="#">Write for us</a>
+    </div>
+  </footer>
+
+  <!-- internal linking example (hidden but present) -->
+  <div style="display: none;">Internal links: /guides/seed-saving, /expert/mycelial-bridge, /resources/compost-calculator</div>
+
+</div> <!-- container -->
+</body>
+</html>

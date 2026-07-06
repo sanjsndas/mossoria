@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms · Mossoria Ivy Sanctum</title>
+  <!-- unique typography & base -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- reset & variables (unique palette) ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f6ef;
+      color: #1e2b2c;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- typography & spacing ---------- */
+    h1, h2, h3, h4 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #1d3a3a;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.8rem 0 1rem;
+      border-left: 6px solid #7b9e7e;
+      padding-left: 1.2rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      color: #2f544b;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #3c6e5a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1d3a2e;
+    }
+
+    /* ---------- header / nav ---------- */
+    .site-header {
+      padding: 2rem 0 0.8rem;
+      border-bottom: 2px solid #d6dac8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1d3a3a;
+      letter-spacing: -0.03em;
+    }
+    .logo span {
+      color: #6b8f6e;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #1e2b2c;
+    }
+    .nav-links a:hover {
+      color: #4f7a5a;
+    }
+    .nav-links a.active {
+      border-bottom: 3px solid #7b9e7e;
+      padding-bottom: 4px;
+    }
+
+    /* ---------- terms hero / intro ---------- */
+    .terms-hero {
+      padding: 2.8rem 0 1rem;
+    }
+    .terms-hero h1 {
+      font-size: 3.6rem;
+      line-height: 1.1;
+    }
+    .terms-hero p {
+      font-size: 1.3rem;
+      color: #2e4b41;
+      max-width: 700px;
+    }
+    .section-tag {
+      display: inline-block;
+      background: #dce8d2;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #1d3a2e;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    /* ---------- terms content cards ---------- */
+    .terms-card {
+      background: #ffffffde;
+      backdrop-filter: blur(2px);
+      padding: 2rem 2.2rem;
+      border-radius: 32px 12px 32px 12px;
+      box-shadow: 0 12px 28px -12px rgba(30, 43, 44, 0.08);
+      border: 1px solid #e8ede0;
+      margin: 2rem 0;
+      transition: 0.2s;
+    }
+    .terms-card:hover {
+      border-color: #b9cfb0;
+      box-shadow: 0 20px 32px -16px #2b4d3e20;
+    }
+    .terms-card h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .terms-card h3 span {
+      background: #dce8d2;
+      border-radius: 60px;
+      padding: 0.1rem 0.8rem;
+      font-size: 0.8rem;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: #1d3a2e;
+    }
+    .terms-card ul, .terms-card ol {
+      padding-left: 1.8rem;
+      margin: 0.8rem 0 0.5rem;
+    }
+    .terms-card li {
+      margin-bottom: 0.6rem;
+      font-size: 1.05rem;
+    }
+    .terms-card .highlight {
+      background: #f0f6ea;
+      padding: 0.8rem 1.4rem;
+      border-radius: 60px 12px 60px 12px;
+      margin: 1.2rem 0 0;
+      font-weight: 500;
+      border-left: 4px solid #7b9e7e;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #3b6b52;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1d3a3a;
+      margin-top: 0.6rem;
+    }
+    .btn-outline:hover {
+      background: #1d3a3a;
+      color: #f4f9ed;
+      border-color: #1d3a3a;
+    }
+
+    .footer {
+      border-top: 2px solid #d2dcc6;
+      padding: 2.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      h1 { font-size: 2.4rem; }
+      .terms-hero h1 { font-size: 2.6rem; }
+      .nav-links { gap: 1rem; }
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+      .terms-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <div class="logo">Mossoria <span>Ivy Sanctum</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html" class="active">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- terms hero -->
+  <section class="terms-hero">
+    <span class="section-tag">last updated · 2028</span>
+    <h1>Terms of Privacy &amp; Use</h1>
+    <p>Welcome to Mossoria Ivy Sanctum. By using our journal, you agree to honor the roots of this community — respect, transparency, and a shared love for the living world. Below are the guiding principles of our digital sanctuary.</p>
+  </section>
+
+  <!-- terms content -->
+  <div class="terms-card">
+    <h3><span>01</span> Our commitment to your data</h3>
+    <p>We collect only what is necessary to nurture your experience. Your personal information is never sold, traded, or used beyond the purpose of communication and service improvement.</p>
+    <ul>
+      <li><strong>Minimal collection:</strong> name, email, and voluntary preferences.</li>
+      <li><strong>Secure storage:</strong> encrypted databases and restricted access.</li>
+      <li><strong>No third-party sharing:</strong> except when required by law or with explicit consent.</li>
+    </ul>
+    <div class="highlight">🌱  We treat your data like a seedling — with care, and only for growth.</div>
+  </div>
+
+  <div class="terms-card">
+    <h3><span>02</span> Use of the sanctum</h3>
+    <p>Our content is offered for personal, educational, and non-commercial use. You are welcome to share articles with attribution, but reproduction or distribution for profit requires prior permission.</p>
+    <ul>
+      <li><strong>Attribution:</strong> always credit Mossoria Ivy Sanctum and the author.</li>
+      <li><strong>Non-commercial:</strong> no reselling or repackaging of our resources.</li>
+      <li><strong>Community respect:</strong> engage with kindness and curiosity.</li>
+    </ul>
+    <p style="margin-top: 0.5rem;">If you wish to use our work in a way not covered here, <a href="contact.html">reach out</a> — we’re reasonable folk.</p>
+  </div>
+
+  <div class="terms-card">
+    <h3><span>03</span> Intellectual property &amp; contributions</h3>
+    <p>All original text, illustrations, and designs are the property of Mossoria Ivy Sanctum and its contributors. Guest writers retain rights to their individual work, but grant us a license to publish and archive.</p>
+    <ul>
+      <li><strong>User-generated content:</strong> comments, submissions, or feedback may be used for editorial purposes.</li>
+      <li><strong>Attribution:</strong> we always credit authors and photographers.</li>
+    </ul>
+    <p>If you believe your work has been used improperly, please <a href="contact.html">contact us</a> and we will resolve it promptly.</p>
+  </div>
+
+  <div class="terms-card">
+    <h3><span>04</span> Privacy &amp; cookies</h3>
+    <p>We use minimal cookies to enhance your experience — never for tracking or advertising. You can manage your cookie preferences at any time.</p>
+    <ul>
+      <li><strong>Essential cookies:</strong> for site functionality and preferences.</li>
+      <li><strong>Analytics:</strong> anonymized, aggregated data to improve content.</li>
+      <li><strong>No tracking:</strong> we do not use cross-site tracking or retargeting.</li>
+    </ul>
+    <p>For full details, see our <a href="privacy.html">Privacy Policy</a> and <a href="cookies.html">Cookies Policy</a>.</p>
+  </div>
+
+  <div class="terms-card">
+    <h3><span>05</span> Changes &amp; updates</h3>
+    <p>We may update these terms occasionally to reflect new practices or legal requirements. We will notify you of significant changes via email or a prominent notice on the site.</p>
+    <p><strong>Effective date:</strong> 1 January 2028. This version replaces all previous versions.</p>
+    <a href="#" class="btn-outline">Download PDF version</a>
+  </div>
+
+  <!-- additional note: questions -->
+  <div style="background: #eef5e8; padding: 2rem 2.2rem; border-radius: 60px 12px 60px 12px; margin: 2.5rem 0;">
+    <h3 style="margin: 0 0 0.3rem;">📬  Have a question?</h3>
+    <p style="margin-bottom: 0.5rem;">We’re here to help. Reach out to our steward team — we respond within two sunrises.</p>
+    <a href="contact.html" style="font-weight: 700; border-bottom: 2px solid #7b9e7e; padding-bottom: 2px;">Contact us →</a>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2028 Mossoria Ivy Sanctum · rooted in knowledge</div>
+    <div>
+      <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="#">Write for us</a>
+    </div>
+  </footer>
+
+</div> <!-- container -->
+</body>
+</html>

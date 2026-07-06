@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookies · Mossoria Ivy Sanctum</title>
+  <!-- same typography & base as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- reset & variables (identical palette) ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f6ef;
+      color: #1e2b2c;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- typography & spacing ---------- */
+    h1, h2, h3, h4 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #1d3a3a;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.8rem 0 1rem;
+      border-left: 6px solid #7b9e7e;
+      padding-left: 1.2rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      color: #2f544b;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #3c6e5a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1d3a2e;
+    }
+
+    /* ---------- header / nav (mirror) ---------- */
+    .site-header {
+      padding: 2rem 0 0.8rem;
+      border-bottom: 2px solid #d6dac8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1d3a3a;
+      letter-spacing: -0.03em;
+    }
+    .logo span {
+      color: #6b8f6e;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #1e2b2c;
+    }
+    .nav-links a:hover {
+      color: #4f7a5a;
+    }
+
+    /* ---------- cookies specific ---------- */
+    .cookies-card {
+      background: #ffffffde;
+      backdrop-filter: blur(2px);
+      padding: 2rem 2.5rem 2.5rem;
+      border-radius: 32px 12px 32px 12px;
+      box-shadow: 0 12px 28px -12px rgba(30, 43, 44, 0.08);
+      border: 1px solid #e8ede0;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .cookies-card h3 {
+      margin-top: 1.8rem;
+      border-left: 4px solid #7b9e7e;
+      padding-left: 1rem;
+    }
+    .cookies-card h3:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .cookie-list {
+      list-style: none;
+      margin: 0.5rem 0 1.2rem;
+    }
+    .cookie-list li {
+      padding: 0.4rem 0 0.4rem 1.8rem;
+      position: relative;
+    }
+    .cookie-list li::before {
+      content: "🍪";
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      color: #7b9e7e;
+      font-size: 1.2rem;
+    }
+    .cookie-list li strong {
+      color: #1d3a3a;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dce8d2;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #1d3a2e;
+      font-weight: 600;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #bccdb0, transparent);
+      margin: 2rem 0;
+    }
+
+    .footer {
+      border-top: 2px solid #d2dcc6;
+      padding: 2.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #3b6b52;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1d3a3a;
+    }
+    .btn-outline:hover {
+      background: #1d3a3a;
+      color: #f4f9ed;
+      border-color: #1d3a3a;
+    }
+
+    /* cookie preference toggle (decorative) */
+    .pref-toggle {
+      background: #f1f6eb;
+      border-radius: 60px;
+      padding: 0.3rem 0.3rem 0.3rem 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border: 1px solid #cbdcc0;
+    }
+    .pref-toggle span {
+      font-weight: 500;
+    }
+    .toggle-group {
+      display: flex;
+      background: white;
+      border-radius: 60px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+    .toggle-group button {
+      background: transparent;
+      border: none;
+      padding: 0.3rem 1.4rem;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: default;
+      color: #1e2b2c;
+    }
+    .toggle-group .active {
+      background: #3b6b52;
+      color: white;
+      border-radius: 60px;
+    }
+
+    @media (max-width: 800px) {
+      h1 { font-size: 2.4rem; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+      .cookies-card { padding: 1.8rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (exact copy from main) -->
+  <header class="site-header">
+    <div class="logo">Mossoria <span>Ivy Sanctum</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html" style="color: #4f7a5a; border-bottom: 2px solid #7b9e7e;">Cookies Policy</a></li>
+    </ul>
+  </header>
+
+  <!-- page intro -->
+  <section style="padding: 1.5rem 0 0.5rem;">
+    <span class="badge">🍪 crumb by crumb</span>
+    <h1>Cookies Policy</h1>
+    <p style="max-width: 750px; font-size: 1.2rem;">Just like a forest floor, our website uses tiny, harmless crumbs — cookies — to make your experience richer. Here’s everything we leave behind, and why.</p>
+  </section>
+
+  <!-- main cookies content -->
+  <div class="cookies-card">
+    <h3>What are cookies?</h3>
+    <p>Cookies are small text files stored on your device when you visit a website. They help us remember your preferences, understand how you interact with our content, and keep the sanctum running smoothly. Think of them as little botanical markers that help us tend to your visit.</p>
+
+    <h3>How we use cookies</h3>
+    <p>We keep our cookie garden minimal and respectful. We use only what is necessary and beneficial:</p>
+    <ul class="cookie-list">
+      <li><strong>Essential cookies</strong> — these are strictly necessary for the site to function (e.g., remembering your consent settings).</li>
+      <li><strong>Analytics cookies</strong> — we use a lightweight, anonymized analytics tool (no third-party tracking) to see which pages are most loved, so we can grow more of what you enjoy.</li>
+      <li><strong>Preference cookies</strong> — if you choose to opt in, we save your language or theme preferences (though we keep things simple).</li>
+    </ul>
+
+    <h3>Your choices</h3>
+    <p>You are in full control of your cookie experience. You can adjust your browser settings to block or delete cookies, or use the preference toggles below (they reflect your current choice).</p>
+
+    <!-- decorative preference toggle (visual only) -->
+    <div style="margin: 1.5rem 0 0.8rem;">
+      <div class="pref-toggle">
+        <span>🍪 cookie preference</span>
+        <div class="toggle-group">
+          <button class="active">Allow all</button>
+          <button>Essentials only</button>
+          <button>Block all</button>
+        </div>
+        <span style="font-size: 0.8rem; color: #3d5e4b; padding-right: 0.5rem;">(demo toggle)</span>
+      </div>
+      <p style="font-size: 0.95rem; margin-top: 0.8rem; color: #3f5f50;">You can change your mind at any time. We respect your digital autonomy.</p>
+    </div>
+
+    <h3>Third-party cookies</h3>
+    <p>We do not use third-party advertising cookies, social media trackers, or any external tracking scripts. Our only external links are to our Bluesky and Mastodon profiles — those platforms have their own cookie policies, which we encourage you to review.</p>
+
+    <h3>Managing cookies in your browser</h3>
+    <p>Most browsers allow you to control cookies through their settings. You can usually find these options in the "Privacy" or "Preferences" menu. Here are links to guides for the most common browsers:</p>
+    <ul class="cookie-list" style="margin-top: 0.2rem;">
+      <li><a href="#" style="font-weight: 400;">Chrome</a> · <a href="#" style="font-weight: 400;">Firefox</a> · <a href="#" style="font-weight: 400;">Safari</a> · <a href="#" style="font-weight: 400;">Edge</a></li>
+    </ul>
+
+    <h3>Updates to this policy</h3>
+    <p>We may update this cookies policy occasionally to reflect changes in our practices or for legal reasons. We’ll always post the latest version here, with the revision date below.</p>
+    <p style="font-style: italic; color: #2f544b;">📅 This policy was last updated on 15 May 2026.</p>
+
+    <div class="divider"></div>
+
+    <!-- reassurance & contact -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div>
+        <span style="font-size: 1.8rem; margin-right: 0.5rem;">🌱</span>
+        <span style="font-weight: 500;">Have questions about cookies? We’re here to help.</span>
+      </div>
+      <a href="contact.html" class="btn-outline">Reach out →</a>
+    </div>
+  </div>
+
+  <!-- additional trust signals (consistent with privacy page) -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 1rem 0 3rem; background: #f1f6eb; padding: 1.8rem 2.2rem; border-radius: 60px 12px 60px 12px; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.2rem;">🍪</span>
+      <span><strong>Minimal & safe</strong><br />only necessary cookies</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.2rem;">🛡️</span>
+      <span><strong>No third-party tracking</strong><br />your data stays with us</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.2rem;">⚖️</span>
+      <span><strong>You're in control</strong><br />manage anytime</span>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Mossoria Ivy Sanctum · rooted in knowledge</div>
+    <div>
+      <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="#">Write for us</a>
+    </div>
+  </footer>
+
+</div> <!-- container -->
+</body>
+</html>

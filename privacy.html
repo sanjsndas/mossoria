@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy · Mossoria Ivy Sanctum</title>
+  <!-- same typography & base as main site -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- reset & variables (identical palette) ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f9f6ef;
+      color: #1e2b2c;
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.7;
+      padding: 0 20px;
+    }
+
+    .container {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------- typography & spacing ---------- */
+    h1, h2, h3, h4 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #1d3a3a;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin: 2.8rem 0 1rem;
+      border-left: 6px solid #7b9e7e;
+      padding-left: 1.2rem;
+    }
+    h3 {
+      font-size: 1.6rem;
+      margin: 2rem 0 0.8rem;
+      color: #2f544b;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #3c6e5a;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    a:hover {
+      color: #1d3a2e;
+    }
+
+    /* ---------- header / nav (mirror) ---------- */
+    .site-header {
+      padding: 2rem 0 0.8rem;
+      border-bottom: 2px solid #d6dac8;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-family: 'Merriweather', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1d3a3a;
+      letter-spacing: -0.03em;
+    }
+    .logo span {
+      color: #6b8f6e;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: #1e2b2c;
+    }
+    .nav-links a:hover {
+      color: #4f7a5a;
+    }
+
+    /* ---------- privacy specific ---------- */
+    .privacy-card {
+      background: #ffffffde;
+      backdrop-filter: blur(2px);
+      padding: 2rem 2.5rem 2.5rem;
+      border-radius: 32px 12px 32px 12px;
+      box-shadow: 0 12px 28px -12px rgba(30, 43, 44, 0.08);
+      border: 1px solid #e8ede0;
+      margin: 2rem 0 2.5rem;
+    }
+
+    .privacy-card h3 {
+      margin-top: 1.8rem;
+      border-left: 4px solid #7b9e7e;
+      padding-left: 1rem;
+    }
+    .privacy-card h3:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .privacy-list {
+      list-style: none;
+      margin: 0.5rem 0 1.2rem;
+    }
+    .privacy-list li {
+      padding: 0.4rem 0 0.4rem 1.8rem;
+      position: relative;
+    }
+    .privacy-list li::before {
+      content: "🌱";
+      position: absolute;
+      left: 0;
+      top: 0.4rem;
+      color: #3c6e5a;
+      font-size: 1.2rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #dce8d2;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #1d3a2e;
+      font-weight: 600;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #bccdb0, transparent);
+      margin: 2rem 0;
+    }
+
+    .footer {
+      border-top: 2px solid #d2dcc6;
+      padding: 2.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 2px solid #3b6b52;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #1d3a3a;
+    }
+    .btn-outline:hover {
+      background: #1d3a3a;
+      color: #f4f9ed;
+      border-color: #1d3a3a;
+    }
+
+    @media (max-width: 800px) {
+      h1 { font-size: 2.4rem; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; }
+      .site-header { flex-direction: column; align-items: start; gap: 1rem; }
+      .privacy-card { padding: 1.8rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (exact copy from main) -->
+  <header class="site-header">
+    <div class="logo">Mossoria <span>Ivy Sanctum</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html" style="color: #4f7a5a; border-bottom: 2px solid #7b9e7e;">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+  </header>
+
+  <!-- page intro -->
+  <section style="padding: 1.5rem 0 0.5rem;">
+    <span class="badge">🔒 your data, our trust</span>
+    <h1>Privacy Policy</h1>
+    <p style="max-width: 750px; font-size: 1.2rem;">At Mossoria Ivy Sanctum, we treat your data with the same care we give our soil. This policy explains what we collect, why we collect it, and how we protect your roots.</p>
+  </section>
+
+  <!-- main privacy content -->
+  <div class="privacy-card">
+    <h3>1. Information we gather</h3>
+    <p>We collect only the information that helps us cultivate a better experience for our community. This may include:</p>
+    <ul class="privacy-list">
+      <li><strong>Contact details</strong> — name, email address, and any details you share via our forms.</li>
+      <li><strong>Usage data</strong> — pages visited, time spent, and referring sites (via anonymized analytics).</li>
+      <li><strong>Correspondence</strong> — messages, inquiries, or stories you send to our sanctum.</li>
+    </ul>
+
+    <h3>2. How we use your information</h3>
+    <p>We use your data to nurture our community and improve our offerings. Specifically:</p>
+    <ul class="privacy-list">
+      <li>To respond to your inquiries and provide the information you request.</li>
+      <li>To send occasional updates about workshops, new articles, or mycelial discoveries (only if you opt in).</li>
+      <li>To understand how our site is used so we can make it more welcoming and useful.</li>
+    </ul>
+
+    <h3>3. Data protection & storage</h3>
+    <p>Your information is stored securely and accessed only by core members of our sanctum. We never sell, rent, or trade your data. We keep your data only as long as needed to serve you or as required by law.</p>
+    <ul class="privacy-list">
+      <li><strong>Encryption:</strong> all data transmitted via our forms is protected using TLS/SSL.</li>
+      <li><strong>Access:</strong> only our gardeners of data (Elara, Thorne, Rowan) have access.</li>
+      <li><strong>Retention:</strong> we review stored data annually and anonymize or delete what is no longer needed.</li>
+    </ul>
+
+    <h3>4. Your rights</h3>
+    <p>You have the right to tend to your data as you would a garden. You may:</p>
+    <ul class="privacy-list">
+      <li>Request access to the data we hold about you.</li>
+      <li>Ask us to correct or update your information.</li>
+      <li>Withdraw consent at any time and request deletion of your data.</li>
+    </ul>
+    <p style="margin-top: 0.2rem;">To exercise these rights, simply <a href="contact.html">reach out to us</a> — we’ll respond within 48 hours.</p>
+
+    <h3>5. Third-party links & services</h3>
+    <p>Our site may contain links to external resources (such as our Bluesky or Mastodon profiles). We are not responsible for the privacy practices of these platforms, and we encourage you to read their policies.</p>
+
+    <h3>6. Updates to this policy</h3>
+    <p>We may revise this privacy policy from time to time to reflect changes in our practices or for legal reasons. Any updates will be posted here, and we will indicate the date of the latest revision below.</p>
+    <p style="font-style: italic; color: #2f544b;">📅 This policy was last updated on 15 May 2026.</p>
+
+    <div class="divider"></div>
+
+    <!-- quick contact / reassurance -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1rem;">
+      <div>
+        <span style="font-size: 1.8rem; margin-right: 0.5rem;">🌿</span>
+        <span style="font-weight: 500;">Questions about privacy? We’re here to help.</span>
+      </div>
+      <a href="contact.html" class="btn-outline">Speak with us →</a>
+    </div>
+  </div>
+
+  <!-- additional trust signals -->
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 1rem 0 3rem; background: #f1f6eb; padding: 1.8rem 2.2rem; border-radius: 60px 12px 60px 12px; align-items: center;">
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.2rem;">🔐</span>
+      <span><strong>SSL secured</strong><br />all data encrypted</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.2rem;">🕊️</span>
+      <span><strong>No data selling</strong><br />ever, period.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.8rem;">
+      <span style="font-size: 2.2rem;">📬</span>
+      <span><strong>Email opt-in only</strong><br />you choose to hear from us.</span>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>© 2026 Mossoria Ivy Sanctum · rooted in knowledge</div>
+    <div>
+      <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a> · <a href="#">Write for us</a>
+    </div>
+  </footer>
+
+</div> <!-- container -->
+</body>
+</html>
